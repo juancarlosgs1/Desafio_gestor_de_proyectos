@@ -1,0 +1,14 @@
+<% if @proyect.errors.any? %>
+ <div id="error_explanation">
+    <h2><%= pluralize(@proyect.errors.count, "error") %> prohibited this user from being
+    saved:</h2>
+    <ul>
+        <% @proyect.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+ </div>
+<% else %>
+ <h1>Exito, proyecto guardado !!!! </h1>
+ <%= link_to 'Home', root_path  %>
+<% end %>
