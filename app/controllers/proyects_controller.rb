@@ -1,6 +1,13 @@
 class ProyectsController < ApplicationController
   def index
-    @proyects = Proyect.all
+    
+    if params[:status].present?
+      @proyects = Proyect.where('status = ?', params[:status])
+      else
+      @proyects = Proyect.all
+      
+    end
+
   end
   def create
 
@@ -11,6 +18,8 @@ class ProyectsController < ApplicationController
     else
       status = 2
     end
+    
+
     @proyect = Proyect.create(
       name: params[:name],
       description: params[:description],

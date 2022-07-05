@@ -1,3 +1,12 @@
+<div class="container">
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="name">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
+
+
 <%= form_tag(proyects_path, method: "post") do %>
     <div class="form-group">
         <%= label_tag(:name, "Nombre") %>
@@ -26,12 +35,6 @@
     <%= submit_tag("Enviar")%>
 <% end %>
 
-
-
-
-
-
-
 <div class="row">
     <% @proyects.each do |proyect| %>
             
@@ -45,4 +48,5 @@
         </div>
             
     <% end %>
- </div>
+</div>
+</div>
