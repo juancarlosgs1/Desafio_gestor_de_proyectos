@@ -1,8 +1,8 @@
 class ProyectsController < ApplicationController
   def index
     
-    if params[:status].present?
-      @proyects = Proyect.where('status = ?', params[:status])
+    if params[:status_find].present?
+      @proyects = Proyect.where('status = ?', params[:status_find])
       else
       @proyects = Proyect.all
       
@@ -11,9 +11,9 @@ class ProyectsController < ApplicationController
   end
   def create
 
-    if params[:status] == 'propuesta'
+    if params[:status] == 'Propuesta'
       status = 0
-    elsif params[:status] == 'en_progreso'
+    elsif params[:status] == 'Progreso'
       status = 1
     else
       status = 2
