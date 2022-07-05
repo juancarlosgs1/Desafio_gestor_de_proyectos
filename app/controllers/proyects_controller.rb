@@ -2,7 +2,7 @@ class ProyectsController < ApplicationController
   def index
     
     if params[:status_find].present?
-      @proyects = Proyect.where('status = ?', params[:status_find])
+      @proyects = Proyect.where('status= ?', params[:status_find])
       else
       @proyects = Proyect.all
       
